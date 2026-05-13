@@ -15,6 +15,7 @@ class DESCipherAlgorithm:
         self.key = key
         self.iv = iv
         
+        #Verifica o tamanho do vetor de inicializacao, caso seja diferente de 8, levantar excecao
         if len(self.iv) != 8:
             raise ValueError("\nIV precisa ter 8 bytes!!")
 
@@ -37,6 +38,7 @@ class DESCipherAlgorithm:
     #Método de encriptação do arquivo
     def encrypt_file(self, input_path, output_path):
 
+        # Se o arquivo nao existir, levantar excecao
         if not os.path.exists(input_path):
             raise FileNotFoundError(f"\nO arquivo '{input_path}' não foi encontrado!!")
         
@@ -58,6 +60,8 @@ class DESCipherAlgorithm:
     
     #Método de desencriptação do arquivo
     def decrypt_file(self, input_path, output_path):
+
+        # Se o arquivo nao existir, levantar excecao
         if not os.path.exists(input_path):
             raise FileNotFoundError(f"Arquivo não encontrado: '{input_path}'!!")
 
@@ -95,7 +99,7 @@ if __name__ == "__main__":
 
 ######################################################################################################
 
-    # --- EXEMPLO COM DES ---
+    # ------ EXEMPLO COM DES ------
     print("\n------ EXEMPLO COM DES  ------")
     key_des = os.urandom(8)  # DES precisa de exatos 8 bytes de chave
     print("\nExibindo chave de 8 bytes utilizada, guarde-a em um lugar seguro!: ", key_des)
