@@ -99,10 +99,10 @@ if __name__ == "__main__":
 
 ######################################################################################################
 
-    # ------ EXEMPLO COM DES ------
+    #------ EXEMPLO COM DES ------
     print("\n------ EXEMPLO COM DES  ------")
     key_des = os.urandom(8)  # DES precisa de exatos 8 bytes de chave
-    print("\nExibindo chave de 8 bytes utilizada, guarde-a em um lugar seguro!: ", key_des)
+    print(f"\n(DISCLAIMER: Para fins educativos o script mostra a chave)\nExibindo chave de 8 bytes utilizada, guarde-a em um lugar seguro!: ", key_des)
 
     # Instancia a classe
     cipher_des = DESCipherAlgorithm(key=key_des, algorithm='DES', iv=pattern_iv)
@@ -114,18 +114,19 @@ if __name__ == "__main__":
 
 # ######################################################################################################
 
-#     # #  ------ EXEMPLO COM 3DES  ------
-#     print("\n------ EXEMPLO COM 3DES  ------")
-#     key_size = randrange(16, 24, 8) # 3DES precisa de 16/24 bytes pra compor a chave de encriptaca
-#     key_3des = os.urandom(key_size)
-#     print(f"\nExibindo chave de tamanho {key_size} bytes utilizada. Guarde-a em um lugar seguro!: ", key_3des) 
+    # # #  ------ EXEMPLO COM 3DES  ------
+    # print("\n------ EXEMPLO COM 3DES  ------")
+    # key_size = randrange(16, 24, 8) # 3DES precisa de 16/24 bytes pra compor a chave de encriptaca
+    # key_3des = os.urandom(key_size)
+
+    # print(f"\n(DISCLAIMER: Para fins educativos o script mostra a chave)\nExibindo chave de tamanho {key_size} bytes utilizada. Guarde-a em um lugar seguro! : ", key_3des) 
     
-#     # Instancia a classe
-#     cipher_3des = DESCipherAlgorithm(key=key_3des, algorithm='3DES', iv=pattern_iv)
+    # # Instancia a classe
+    # cipher_3des = DESCipherAlgorithm(key=key_3des, algorithm='3DES', iv=pattern_iv)
     
-#     # Executa as operações de encriptacao/desencriptacao
-#     cipher_3des.encrypt_file(msg, enc_msg)
-#     cipher_3des.decrypt_file(enc_msg, rec_msg)
+    # # Executa as operações de encriptacao/desencriptacao
+    # cipher_3des.encrypt_file(msg, enc_msg)
+    # cipher_3des.decrypt_file(enc_msg, rec_msg)
 
     
  
