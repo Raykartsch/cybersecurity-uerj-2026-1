@@ -86,9 +86,9 @@ if __name__ == "__main__":
 
     #Setando os arquivos para a operação do script
     current_file_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    msg = os.path.join(current_file_path, "message.txt") #Arquivo padrão
-    enc_msg = os.path.join(current_file_path, "encrypted_message.txt") #Arquivo encriptado
-    rec_msg = os.path.join(current_file_path, "recovered_message.txt") #Arquivo descriptografado
+    msg = os.path.join(current_file_path, "des_implementation", "message.txt") #Arquivo padrão
+    enc_msg = os.path.join(current_file_path, "des_implementation", "encrypted_message.txt") #Arquivo encriptado
+    rec_msg = os.path.join(current_file_path, "des_implementation", "recovered_message.txt") #Arquivo descriptografado
     
     #Valor do vetor de inicialização padrão
     pattern_iv = b"00000000" # 8 bytes de IV
