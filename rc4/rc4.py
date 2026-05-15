@@ -12,6 +12,7 @@ class RC4:
         else:
             self.key = list(key)
 
+        #Gera o vetor de 256 do S-Box    
         self.S = list(range(256))
 
         #Gera o S-Box do KSA
@@ -26,7 +27,7 @@ class RC4:
         Mistura o array de estado interno 'S'.
 
         """
-
+        #Define o tamanho da chave
         key_length = len(self.key)
         j = 0
         
@@ -37,7 +38,7 @@ class RC4:
     def PRGA(self):
         """
         Pseudo-Random Generation Algorithm (PRGA)
-        Retorna um gerador (generator) com o fluxo contínuo de bytes.
+        Retorna um gerador (generator) com o fluxo continuo de bytes.
 
         """
 
@@ -53,7 +54,7 @@ class RC4:
 
     def process(self, data):
         """
-        Aplica o XOR entre os dados e o keystream contínuo.
+        Aplica o XOR entre os dados e o keystream continuo.
 
         """
 
@@ -75,7 +76,7 @@ class RC4:
 
 if __name__ == "__main__":
     key = "chave ultra super secreta nunca divulgada do algoritmo"
-    msg = "Teste criptografia aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    msg = "Teste criptografia"
     
     print("------ ALGORITMO RC4 ------")
     
@@ -85,15 +86,16 @@ if __name__ == "__main__":
     #Mensagem criptografada com rc4
     encrypted_msg = rc4_encrypt.process(msg)
 
-    print(f"Mensagem Criptografada (HEX): {encrypted_msg.hex()}")
+    print(f"\nChave utilizada: '{key}'")
+    print(f"\nMensagem criptografada: '{encrypted_msg}'")
 
-    # Descriptografando (Sempre instanciar a classe de novo com a chave para descriptografar)
+    # Descriptografando mensagem
     rc4_decrypt = RC4(key)
     decrypt_msg_bytes = rc4_decrypt.process(encrypted_msg)
     decrypted_msg = decrypt_msg_bytes.decode('utf-8')
     
-    print(f"\nMensagem Descriptografada: '{decrypted_msg}'")
+    print(f"\nMensagem descriptografada: '{decrypted_msg}'")
     
     #Validação final
     assert msg == decrypted_msg
-    print("\n✅ Sucesso! O código rodou liso e suporta dados quebrados em pedaços.")
+    print("\nCodigo finalizado!")
