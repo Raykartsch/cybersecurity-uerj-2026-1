@@ -24,7 +24,7 @@ class RC4:
     def KSA(self):
         """
         Key Scheduling Algorithm (KSA)
-        Mistura o array de estado interno 'S'.
+        Mistura o array de estado interno S.
 
         """
         #Define o tamanho da chave
@@ -38,7 +38,7 @@ class RC4:
     def PRGA(self):
         """
         Pseudo-Random Generation Algorithm (PRGA)
-        Retorna um gerador (generator) com o fluxo continuo de bytes.
+        Retorna um gerador com o fluxo continuo de bytes.
 
         """
 
@@ -70,11 +70,8 @@ class RC4:
         return bytes(result)
 
 
-# ==========================================
-# TESTANDO A CLASSE RC4
-# ==========================================
-
 if __name__ == "__main__":
+
     key = "chave ultra super secreta nunca divulgada do algoritmo"
     msg = "Teste criptografia"
     
