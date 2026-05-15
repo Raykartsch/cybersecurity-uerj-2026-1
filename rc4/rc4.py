@@ -57,16 +57,16 @@ class RC4:
 
         """
 
-        resultado = bytearray()
+        result = bytearray()
         
         if isinstance(data, str):
             data = data.encode('utf-8')
             
         for byte in data:
-            byte_processado = byte ^ next(self.keystream)
-            resultado.append(byte_processado)
+            processed_byte = byte ^ next(self.keystream)
+            result.append(processed_byte)
             
-        return bytes(resultado)
+        return bytes(result)
 
 
 # ==========================================
