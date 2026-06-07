@@ -28,9 +28,9 @@ def convert_csv_to_parquet(csv_path, parquet_path):
         print(f"Error during conversion: {e}")
 
 def main():
-    
-    csv_path = "C:/Users/Italo/Desktop/UERJ/2026.1/cibersecurity/cybersecurity-uerj-2026-1/final-project/db/DNN-EdgeIIoT-dataset.csv"
-    parquet_path = "C:/Users/Italo/Desktop/UERJ/2026.1/cibersecurity/cybersecurity-uerj-2026-1/final-project/db/dnn.parquet"
+    default_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    csv_path = os.path.join(default_path, "final-project/db/DNN-EdgeIIoT-dataset.csv")
+    parquet_path = os.path.join(default_path, "final-project/db/dnn.parquet")
     convert_csv_to_parquet(csv_path, parquet_path)
 
 if __name__ == "__main__":

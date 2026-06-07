@@ -28,7 +28,8 @@ def read_parquet_files(directory_path):
 
 if __name__ == "__main__":
     # Update this path to your parquet directory
-    target_dir = 'C:/Users/Italo/Desktop/UERJ/2026.1/cibersecurity/cybersecurity-uerj-2026-1/final-project/db'
+    default_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__))) 
+    target_dir = os.path.join(default_path, "final-project/db")
     df = read_parquet_files(target_dir)
     
     if df is not None:
