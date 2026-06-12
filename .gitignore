@@ -54,6 +54,7 @@ cover/
 *.txt 
 *.csv
 *.parquet
+*.pdf
 
 # Translations
 *.mo
